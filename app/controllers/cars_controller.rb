@@ -2,7 +2,7 @@ class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@cars = Car.all 
+		@cars = Car.all
 	end
 
 	def show
@@ -18,21 +18,22 @@ class CarsController < ApplicationController
 			redirect_to car_path(@car)
 		else
 			render :new
+    end
 	end
 
 	def edit
 	end
-	
+
 	def update
 		@car.update(car_params)
 		redirect_to car_path(@car)
 	end
 
-	def destroy 
+	def destroy
 		@car.destroy
 		redirect_to cars_path
-	end 
-	
+	end
+
 	private
 
 	def car_params
@@ -40,6 +41,6 @@ class CarsController < ApplicationController
 	end
 
 	def find_car
-		@car = Cars.find(params[:id])
+		@car = Car.find(params[:id])
 	end
 end
