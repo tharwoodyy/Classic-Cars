@@ -1,34 +1,36 @@
-
-
 <div class="container container-show">
   <div class="flex-container show-images">
     <div class="main-image">
-      <img class="large-image" src="https://assets.bauer-wolke.co.uk/imagegen/p/800/-/s3/digital-cougar-assets-uk/MomoAds/2020/02/22/133845/580389.jpg" alt="">
+      <img class="large-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-hire.jpg" alt="">
     </div>
     <div class="small-image-wrapper">
       <div class="row">
-        <div class="col-6" ><img class="small-image" src="https://assets.bauer-wolke.co.uk/imagegen/p/800/-/s3/digital-cougar-assets-uk/MomoAds/2020/02/22/133853/580393.jpg" alt=""></div>
-        <div class="col-6" ><img class="small-image" src="https://assets.bauer-wolke.co.uk/imagegen/p/800/-/s3/digital-cougar-assets-uk/MomoAds/2020/02/22/133901/580397.jpg" alt=""></div>
+        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-side-view.jpg" alt=""></div>
+        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-rear-view.jpg" alt=""></div>
       </div>
       <div class="row">
-        <div class="col-6" ><img class="small-image" src="https://assets.bauer-wolke.co.uk/imagegen/p/800/-/s3/digital-cougar-assets-uk/MomoAds/2020/02/22/133857/580395.jpg" alt=""></div>
-        <div class="col-6" ><img class="small-image" src="https://assets.bauer-wolke.co.uk/imagegen/p/800/-/s3/digital-cougar-assets-uk/MomoAds/2020/02/22/133915/580417.jpg" alt=""></div>
+        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-interior.jpg" alt=""></div>
+        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-hire.jpg" alt=""></div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="info-container">
   <div class="info">
     <p class="description">
-      <h1>Car</h1>
-      <%= @car.model %>
-      <%= @car.manufacturer %>
-      <%= @car.year %>
-      <%= @car.price %>
-      <%= @car.rating %>
-      <%= link_to 'Back', cars_path %>
-    </p>
-    <p class="reivews"></p>
+    <h1><%= @car.manufacturer %> <%= @car.model %></h1>
+      <ul>
+        <li><%= @car.year %></li>
+        <li><%= @car.price %></li>
+        <li><%= '⭐️' * @car.rating %></li>
+      </ul>
+    <p class="reviews"></p>
   </div>
   <div class="calendar">
-    <p>Insert Calendar</p>
+    <h1>Availability</h1>
+    <img src="https://gzscripts.com///application/web/upload/1424818375.png" alt="">
   </div>
 </div>
+
+<%= link_to 'Back', cars_path %>

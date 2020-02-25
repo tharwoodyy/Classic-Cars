@@ -1,18 +1,29 @@
 .small-image {
   width: 100%;
   object-fit: cover;
-
 }
 
 .small-image-wrapper {
   width: 500px;
+  margin-left: 30px;
 }
 
 .flex-container {
   display: flex;
-  // justify-content: center;
+  margin-top: 20px;
 }
 
 .large-image {
   width: 470px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.info {
+  flex-grow: 1;
+  text-align: center;
 }
