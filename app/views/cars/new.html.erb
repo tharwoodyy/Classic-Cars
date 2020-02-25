@@ -1,0 +1,17 @@
+<h1> Add Your Listing </h1>
+    <div class="col-6 offset-3">
+      <%= simple_form_for @car do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :model %>
+        <%= f.input :manufacturer %>
+        <%= f.input :year %>
+        <%= f.input :price %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Create Listing" %>
+      <% end %>
+    </div>
+
+    <%= link_to "Back to listings", cars_path %>
+
+
