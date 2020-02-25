@@ -1,6 +1,6 @@
 <h1> Browse All Cars </h1>
 
-<div class="container">
+<div class="container card-container">
   <div class="row">
     <% @cars.each do |car| %>
       <% next unless car.photo.attached? %>

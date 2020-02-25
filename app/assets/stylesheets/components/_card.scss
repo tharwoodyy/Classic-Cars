@@ -1,10 +1,12 @@
 
- h1{
-  font-family: 'Arvo', ;
+
+ h1 {
+  font-family: 'Playfair Display', ;
+
   text-align: center;
  }
 
-.container{
+.card-container {
   display: flex;
   justify-content: space-between;
   // flex-wrap: flex;
