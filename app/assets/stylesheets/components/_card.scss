@@ -1,0 +1,65 @@
+
+ h1{
+  font-family: 'Playfair Display', ;
+ }
+.container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: flex;
+}
+
+.card {
+  display: flex;
+  height: 450px;
+  width: 300px;
+  background-position: center;
+  margin: 5px
+}
+
+.card-img {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 4%;
+
+}
+
+.card-description {
+  padding: 5px;
+  height: 100px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-family: 'Playfair Display', ;
+}
+
+.align-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-family: 'Playfair Display', ;
+}
+
+.align-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-family: 'Playfair Display', ;
+}
+
+.card-information {
+  ul{
+    padding-left: 5px;
+    list-style: none;
+  }
+}
+
+.card-information li {
+  font-size: 14px;
+  font-family: 'Playfair Display', ;
+}
