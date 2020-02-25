@@ -1,19 +1,21 @@
 
  h1{
   font-family: 'Playfair Display', ;
+  text-align: center;
  }
-// .container{
-//   display: flex;
-//   justify-content: space-between;
-//   flex-wrap: flex;
-// }
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  // flex-wrap: flex;
+}
 
 .card {
   display: flex;
-  height: 450px;
-  width: 300px;
-  background-position: center;
-  margin: 5px
+  // height: 450px;
+  // width: 300px;
+  //margin: 10px;
+  //padding: 10px;
 }
 
 .card-img {
@@ -53,13 +55,9 @@
 }
 
 .card-information {
-  ul{
     padding-left: 5px;
     list-style: none;
-  }
+    font-size: 14px;
+    font-family: 'Playfair Display', ;
 }
 
-.card-information li {
-  font-size: 14px;
-  font-family: 'Playfair Display', ;
-}

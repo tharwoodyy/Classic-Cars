@@ -3,29 +3,28 @@
 <div class="container">
   <div class="row">
     <% @cars.each do |car| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card">
-          <%= image_tag 'https://images.unsplash.com/photo-1500073505333-7df7a702e5f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80', class: "card-img" %>
-            <div class="card-description">
-              <div class="card-title">
-                <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>
-                <p class="right-align"> <%= '*' * car.rating %></p>
+      <% next unless car.photo.attached? %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= link_to car_path(car), class: 'card-link' do %>
+          <div class="card">
+            <%= cl_image_tag car.photo.key, class: "card-img" %>
+              <div class="card-description">
+                <div class="card-title">
+                  <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>
+                  <p class="right-align"> <%= '*' * (car.rating || 0) %></p>
+                </div>
+                <div class="card-information">
+                  <%= car.description %>
+                </div>
               </div>
-              <div class="card-information">
-                <ul>
-                  <li>Unique collectors item car </li>
-                  <li>Mint condition</li>
-                  <li>Running smoothly</li>
-                  <li>Perfect for trip back in time</li>
-                </ul>
-              </div>
-            </div>
-          <%= link_to "", car_path(car), class: 'card-link' %>
+            <% end %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+<button type="button" class="btn btn-link"> <%= link_to "Add a new Listing", new_car_path(@car) %></button>
 
 
 

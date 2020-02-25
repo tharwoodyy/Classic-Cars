@@ -1,17 +1,7 @@
 <div class="container container-show">
   <div class="flex-container show-images">
     <div class="main-image">
-      <img class="large-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-hire.jpg" alt="">
-    </div>
-    <div class="small-image-wrapper">
-      <div class="row">
-        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-side-view.jpg" alt=""></div>
-        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-rear-view.jpg" alt=""></div>
-      </div>
-      <div class="row">
-        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-interior.jpg" alt=""></div>
-        <div class="col-6" ><img class="small-image" src="https://bespokes.co.uk/wp-content/uploads/2018/07/jaguar-etype-hire.jpg" alt=""></div>
-      </div>
+      <%= cl_image_tag @car.photo.key, class:'large-image' %>
     </div>
   </div>
 </div>
@@ -26,10 +16,6 @@
         <li><%= '⭐️' * @car.rating %></li>
       </ul>
     <p class="reviews"></p>
-  </div>
-  <div class="calendar">
-    <h1>Availability</h1>
-    <img src="https://gzscripts.com///application/web/upload/1424818375.png" alt="">
   </div>
 </div>
 
