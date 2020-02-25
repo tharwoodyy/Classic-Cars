@@ -1,29 +1,13 @@
-.small-image {
-  width: 100%;
+li{
+  list-style: none;
+}
+
+.img-container{
+  float: left;
   object-fit: cover;
 }
 
-.small-image-wrapper {
-  width: 500px;
-  margin-left: 30px;
-}
-
-.flex-container {
-  display: flex;
-  margin-top: 20px;
-}
-
-.large-image {
-  width: 470px;
-}
-
-.info-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.info {
-  flex-grow: 1;
-  text-align: center;
+.info-container{
+  float: right;
+  padding: 5px;
 }
