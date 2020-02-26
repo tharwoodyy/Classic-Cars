@@ -7,10 +7,10 @@
     </div>
     <div class="col-sm-4">
       <div class="info-container">
-          <h1><%= @car.manufacturer %> <%= @car.model %></h1>
+          <h1 class ="less"><%= @car.manufacturer %> <%= @car.model %></h1>
             <ul>
-              <li><%= @car.year %></li>
-              <li><%= @car.price %></li>
+              <li class="lessli"><%= @car.year %></li>
+              <li class="lessli"><%= @car.price %></li>
               <li><%= '☆' * 5 %></li>
             </ul>
           </div>
@@ -21,10 +21,14 @@
 <div class="car-container" >
 
 </div> -->
-
+<div class="links">
+<button type="button" class="btn btn-link">
 <%= link_to 'Back', cars_path %>
+</button>
+<button type="button" class="btn btn-link">
 <%= link_to 'Book car', new_car_booking_path(@car) %>
-
+</button>
+</div>
 
 
 
