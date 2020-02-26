@@ -1,0 +1,8 @@
+<h1> Booking </h1>
+<%= simple_form_for [@car, @booking] do |f| %>
+  <%= f.input :start_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year] %>
+  <%= f.input :end_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year] %>
+  <%= f.submit "Create Booking"%>
+<% end %>
+
+<%= link_to "Back to listings", cars_path %>
