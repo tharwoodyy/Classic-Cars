@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 50px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
 }
 
 .navbar-lewagon .navbar-collapse {
