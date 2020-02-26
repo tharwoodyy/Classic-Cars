@@ -1,22 +1,20 @@
-<div class="container container-show">
-  <div class="flex-container show-images">
-    <div class="main-image">
-      <%= cl_image_tag @car.photo.key, class:'large-image' %>
-    </div>
+<div class="car-container" >
+  <div class="image-container">
+    <%= cl_image_tag @car.photo.key, class:'large-image' %>
   </div>
-</div>
 
-<div class="info-container">
-  <div class="info">
-    <p class="description">
-    <h1><%= @car.manufacturer %> <%= @car.model %></h1>
-      <ul>
-        <li><%= @car.year %></li>
-        <li><%= @car.price %></li>
-        <li><%= '⭐️' * @car.rating %></li>
-      </ul>
-    <p class="reviews"></p>
+  <div class="info-container">
+      <h1><%= @car.manufacturer %> <%= @car.model %></h1>
+        <ul>
+          <li><%= @car.year %></li>
+          <li><%= @car.price %></li>
+          <li><%= '☆' * 5 %></li>
+        </ul>
   </div>
 </div>
 
 <%= link_to 'Back', cars_path %>
+
+
+
+
