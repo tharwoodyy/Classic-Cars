@@ -5,8 +5,8 @@ class Car < ApplicationRecord
 
   def initialize(attrs)
     require 'open-uri'
-    photo = attrs.delete(:photo)
+    photo = attrs.delete(:photo) if attrs
     super
-    self.photo.attach(io: open(photo), filename: 'x')
+    self.photo.attach(io: open(photo), filename: 'x') if photo
   end
 end
