@@ -3,6 +3,12 @@ class Car < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
+#validations
+  # validates :model, presence: true
+  # validates :year, presence: true
+  # validates :price, presence: true, numericality: true
+  # validates :manufacturer, presence: true
+  
   def initialize(attrs)
     require 'open-uri'
     photo = attrs.delete(:photo) if attrs
