@@ -2,7 +2,7 @@
 
  h1 {
   font-family: 'Playfair Display', ;
-
+  padding: 50px;
   text-align: center;
  }
 
@@ -14,7 +14,7 @@
 
 .card {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   // height: 450px;
   // width: 300px;
   //margin: 10px;
@@ -70,8 +70,12 @@
 }
 
 .btn {
-  color: black;
   background: white;
+
+}
+
+.btn a {
+  color: black;
   font-family: 'Arvo', ;
   text-decoration: none;
 }
