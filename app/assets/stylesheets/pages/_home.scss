@@ -4,7 +4,12 @@ h1 {
   font-family: 'Arvo', ;
 }
 
+.carousel-inner {
+  // height: 500px;
+  // width: 100%;
+  object-fit: contain;
+  background-position: 0 150%;
+}
+
 .d-block {
-  height: 500px;
-  object-fit: cover;
 }

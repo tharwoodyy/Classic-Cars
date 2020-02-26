@@ -1,5 +1,5 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://logodix.com/logo/1125815.jpg" %>
     <% end %>
 
@@ -15,6 +15,9 @@
         </li>
         <li class="nav-item">
           <%= link_to "Cars", cars_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Bookings", cars_path, class: "nav-link" %>
         </li>
         <% if current_user.present? %>
           <li class="nav-item dropdown">
