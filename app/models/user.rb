@@ -6,5 +6,18 @@ class User < ApplicationRecord
 
   has_many :cars
   has_many :bookings
+  has_many :reviews, through: :bookings
+
+  def owner?
+    cars.any?
+  end
+
+  def user?
+    cars.empty?
+  end
+
+  def booker?
+    bookings.any?
+  end
 
 end

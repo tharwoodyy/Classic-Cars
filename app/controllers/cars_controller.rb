@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
+	before_action :check_owner_access, only: [:edit, :update, :destroy]
 
 	def index
     if params[:query].present?
@@ -10,16 +11,15 @@ class CarsController < ApplicationController
 	end
 
 	def show
-
     @markers = [
       {
         lat: @car.latitude,
-        lng: @car.longitude
+        lng: @car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: @car }),
+        image_url: @car.photo.attached? ? @car.photo.service_url : 'https://kitt.lewagon.com/placeholder/cities/random'
       }
     ]
-
 		@review = Review.new
-
 	end
 
 	def new
@@ -37,10 +37,12 @@ class CarsController < ApplicationController
 	end
 
 	def edit
+    @car = Car.find(params[:id])
 	end
 
 	def update
-		@car.update(car_params)
+		@car = Car.find(params[:id])
+    @car.update(car_params)
 		redirect_to car_path(@car)
 	end
 
@@ -52,7 +54,7 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-		params.require(:car).permit(:manufacturer, :model, :year, :price, :rating, :description, photos: [])
+		params.require(:car).permit(:manufacturer, :model, :year, :address, :price, :rating, :description, photos: [])
 	end
 
 	def find_car
