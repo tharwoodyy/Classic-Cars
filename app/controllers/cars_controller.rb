@@ -7,12 +7,16 @@ class CarsController < ApplicationController
 
 
 	def show
+
     @markers = [
       {
         lat: @car.latitude,
         lng: @car.longitude
       }
     ]
+
+		@review = Review.new
+
 	end
 
 	def new
