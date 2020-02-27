@@ -16,7 +16,7 @@ class CarsController < ApplicationController
         lat: @car.latitude,
         lng: @car.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { car: @car }),
-        image_url: @car.photo.attached? ? @car.photo.service_url : 'https://kitt.lewagon.com/placeholder/cities/random'
+        image_url: @car.photos.any? ? @car.photos.first.service_url : 'https://kitt.lewagon.com/placeholder/cities/random'
       }
     ]
 		@review = Review.new

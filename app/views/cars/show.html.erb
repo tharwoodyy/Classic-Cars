@@ -78,6 +78,7 @@
                 <% end %>
               </span>
               <%= review.content %>
+              <%= link_to 'Delete', review_path(review), method: :delete %>
             </li>
           <% end %>
         </ul>
