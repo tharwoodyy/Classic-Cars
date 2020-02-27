@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo.key, height: 400, width: 700, crop: :fill %>'); height: 400px; width: 700px">
+      <div class="image-container" style="background-image: url('<%= cl_image_path @car.photo.key, height: 400, width: 700, crop: :fit; %>'); height: 400px; width: 700px; background-repeat: no-repeat;">
         <%#= cl_image_tag @car.photo.key, class:'large-image' %>
       </div>
     </div>
@@ -12,6 +12,9 @@
               <li class="lessli"><%= @car.year %></li>
               <li class="lessli"><%= @car.price %></li>
               <li><%= '☆' * 5 %></li>
+              <button type="button" class="btn btn-link">
+            <%= link_to 'Book car', new_car_booking_path(@car) %>
+            </button>
             </ul>
           </div>
       </div>
@@ -25,37 +28,41 @@
 <button type="button" class="btn btn-link">
 <%= link_to 'Back', cars_path %>
 </button>
-<button type="button" class="btn btn-link">
-<%= link_to 'Book car', new_car_booking_path(@car) %>
-</button>
+
 </div>
 
-
-<div id="map"
-     style="width: 100%;
-     height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-<h3>Reviews</h3>
-  <% if @car.reviews.empty? %>
-    <p>Be the first to leave a review</p>
-  <% else %>
-    <ul class="list-group">
-      <% @car.reviews.each do |review| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span class="badge badge-primary badge-pill">
-            <% counter = 0 %>
-            <% 5.times do %>
-              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-              <% counter += 1 %>
-            <% end %>
-          </span>
-          <%= review.content %>
-        </li>
+<div class="d-flex" style="margin: 0 30px;">
+  <div id="map"
+       style="width: 50%;
+       height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div style="width: 50vw; padding-left: 15px;">
+    <div class ="review-header">
+    <h3>Reviews</h3>
+      <% if @car.reviews.empty? %>
+        <p>Be the first to leave a review</p>
+      <% else %>
+    </div>
+        <ul class="list-group">
+          <% @car.reviews.each do |review| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+                <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+              <%= review.content %>
+            </li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
 
-  <%= render "reviews/new", car: @car, review: @review %>
+      <%= render "reviews/new", car: @car, review: @review %>
+
+  </div>
+</div>
 

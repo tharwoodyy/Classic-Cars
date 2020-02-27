@@ -10,16 +10,15 @@ class CarsController < ApplicationController
 	end
 
 	def show
-
     @markers = [
       {
         lat: @car.latitude,
-        lng: @car.longitude
+        lng: @car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: @car }),
+        image_url: @car.photo.attached? ? @car.photo.service_url : 'https://kitt.lewagon.com/placeholder/cities/random'
       }
     ]
-
 		@review = Review.new
-
 	end
 
 	def new
@@ -52,7 +51,7 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-		params.require(:car).permit(:manufacturer, :model, :year, :price, :rating, :description, :photo)
+		params.require(:car).permit(:manufacturer, :model, :year, :address, :price, :rating, :description, :photo)
 	end
 
 	def find_car
