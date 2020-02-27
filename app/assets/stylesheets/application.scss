@@ -13,6 +13,7 @@
 @import "pages/index";
 //mapbox
 @import 'mapbox-gl/dist/mapbox-gl';
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 p {
   margin: 0;
@@ -23,8 +24,7 @@ p {
   justify-content: center;
 
 
-
-  a {
+ a {
     margin: 20px;
     padding: 10px;
 
@@ -32,9 +32,6 @@ p {
   button {
     margin:10px;
     border-radius: 5px;
-
-
-
 
   }
 }
