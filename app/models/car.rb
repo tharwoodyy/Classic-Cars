@@ -1,10 +1,9 @@
 class Car < ApplicationRecord
   belongs_to :user
-
   has_many :bookings, dependent: :destroy
-
   has_many :reviews, dependent: :destroy
-  has_one_attached :photo
+  has_many_attached :photos
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -21,10 +20,10 @@ class Car < ApplicationRecord
   # validates :price, presence: true, numericality: true
   # validates :manufacturer, presence: true
 
-  def initialize(attrs)
-    require 'open-uri'
-    photo = attrs.delete(:photo) if attrs
-    super
-    self.photo.attach(io: open(photo), filename: 'x') if photo
-  end
+  #  def initialize(attrs)
+  #    require 'open-uri'
+  #    photo = attrs.delete(:photo) if attrs
+  #    super
+  #    self.photo.attach(io: open(photo), filename: 'x') if photo
+  # end
 end

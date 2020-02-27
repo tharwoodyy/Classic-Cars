@@ -8,10 +8,7 @@
         <%= f.input :price %>
         <%= f.input :address %>
         <%= f.input :description, as: :text %>
-        <%= f.input :address %>
-        <%= f.input :photo, as: :file %>
-
-
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create Listing" %>
       <% end %>
     </div>

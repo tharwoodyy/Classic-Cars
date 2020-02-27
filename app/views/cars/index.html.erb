@@ -18,11 +18,11 @@
   <div class="card-con  tainer">
     <div class="row">
       <% @cars.each do |car| %>
-        <% next unless car.photo.attached? %>
+        <% next unless car.photos.attached? %>
         <div class="col-12 col-md-6 col-lg-4">
           <%= link_to car_path(car), class: 'card-link' do %>
             <div class="card">
-              <%= cl_image_tag car.photo.key, class: "card-img" %>
+              <%= cl_image_tag car.photos.first.key, class: "card-img" %>
                 <div class="card-description">
                   <div class="card-title">
                     <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>

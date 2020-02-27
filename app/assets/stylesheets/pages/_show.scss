@@ -6,8 +6,19 @@ li{
 .image-container {
   margin-top: 100px;
 
+}
 
+.cars-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
 
+.first-car-photo {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
 }
 
 .info-container {
