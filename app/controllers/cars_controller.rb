@@ -3,9 +3,16 @@ class CarsController < ApplicationController
 
 	def index
 		@cars = Car.all
-	end
+  end
+
 
 	def show
+    @markers = [
+      {
+        lat: @car.latitude,
+        lng: @car.longitude
+      }
+    ]
 	end
 
 	def new

@@ -18,10 +18,10 @@ url_5 = "https://images.unsplash.com/photo-1536096764090-1d6893b6ab0e?ixlib=rb-1
 url_6 = "https://images.unsplash.com/photo-1517271710308-aa99f1519490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
 
 
-Car.create!(model: 'E-Type', manufacturer: 'Jaguar', year: 1968, price: '£500 per day', description: 'Beautiful classic car, Rare mint condition, Engine running smoothly, leather interirors', rating: 5, user: user, photo: url_1)
-Car.create!(model: 'Beetle', manufacturer: 'VW', year: 1944, price: '£350 per day', description: 'Classic Bug, Perfect for a weekend getaway, Great working condition', rating: 5, user: user, photo: url_2)
-Car.create!(model: 'Pick-up', manufacturer: 'Ford', year: 1944, price: '£150 per day', description: 'Classic Pick-up, Surfboard included, Minor engine troubles', rating: 5, user: user, photo: url_3)
-Car.create!(model: 'Defender', manufacturer: 'Land Rover', year: 1967, price: '£200 per day', description: 'Beautiful Defender, Perfect for a trip to the country side or the beach', rating: 5, user: user, photo: url_4)
-Car.create!(model: 'SS', manufacturer: 'Cheverolet', year: 1974, price: '£300 per day', description: 'Beautiful SS, Perfect for a special event, leather interiror, mint condition, teal', rating: 5, user: user, photo: url_5)
-Car.create!(model: 'T-bird', manufacturer: 'Coupe', year: 1989, price: '£600 per day', description: 'Beautiful convertible, Perfect for a summer getaway, leather interiror, mint condition, cheery red', rating: 5, user: user, photo: url_6)
+Car.create!(model: 'E-Type', manufacturer: 'Jaguar', year: 1968, price: '£500 per day', description: 'Beautiful classic car, Rare mint condition, Engine running smoothly, leather interirors', rating: 5, user: user, photo: url_1, address: '16 Villa Gaudelet, Paris')
+Car.create!(model: 'Beetle', manufacturer: 'VW', year: 1944, price: '£350 per day', description: 'Classic Bug, Perfect for a weekend getaway, Great working condition', rating: 5, user: user, photo: url_2, address: '16 Villa Gaudelet, Paris')
+Car.create!(model: 'Pick-up', manufacturer: 'Ford', year: 1944, price: '£150 per day', description: 'Classic Pick-up, Surfboard included, Minor engine troubles', rating: 5, user: user, photo: url_3, address: '16 Villa Gaudelet, Paris')
+Car.create!(model: 'Defender', manufacturer: 'Land Rover', year: 1967, price: '£200 per day', description: 'Beautiful Defender, Perfect for a trip to the country side or the beach', rating: 5, user: user, photo: url_4, address: '16 Villa Gaudelet, Paris')
+Car.create!(model: 'SS', manufacturer: 'Cheverolet', year: 1974, price: '£300 per day', description: 'Beautiful SS, Perfect for a special event, leather interiror, mint condition, teal', rating: 5, user: user, photo: url_5, address: '16 Villa Gaudelet, Paris')
+Car.create!(model: 'T-bird', manufacturer: 'Coupe', year: 1989, price: '£600 per day', description: 'Beautiful convertible, Perfect for a summer getaway, leather interiror, mint condition, cheery red', rating: 5, user: user, photo: url_6, address: '16 Villa Gaudelet, Paris')
 

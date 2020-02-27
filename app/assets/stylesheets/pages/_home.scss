@@ -2,6 +2,9 @@
 h1 {
   text-align: center;
   font-family: 'Arvo', ;
+  color:black;
+  font-weight: 400;
+  font-size: 50px;
 }
 
 .carousel-inner {
@@ -9,6 +12,12 @@ h1 {
   // width: 100%;
   object-fit: contain;
   background-position: 0 150%;
+  .carousel-image {
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 100px);
+    object-fit: cover;
+  }
 }
 
 
@@ -18,4 +27,9 @@ h1 {
    display: flex;
    justify-content: center;
    width: 100%;
+  }
+  .head {
+    color:white;
+
+
   }
