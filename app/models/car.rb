@@ -6,6 +6,13 @@ class Car < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  include PgSearch::Model
+  pg_search_scope :search_by_manufacturer_and_model_and_year ,
+    against: [ :manufacturer, :model, :year],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 #validations
   # validates :model, presence: true
   # validates :year, presence: true
