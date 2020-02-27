@@ -12,7 +12,7 @@
     <button type="submit" class="btn">
       <i class="fa fa-search"></i>
     </button>
-  <% end %>
+   <% end %>
   </div>
 
   <div class="card-con  tainer">
@@ -26,7 +26,7 @@
                 <div class="card-description">
                   <div class="card-title">
                     <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>
-                    <p class="right-align"> <%= '*' * (car.rating || 0) %></p>
+                    <p class="right-align"> <%= '☆' * (car.rating || 0) %></p>
                   </div>
                   <div class="card-information">
                     <%= car.description %>
