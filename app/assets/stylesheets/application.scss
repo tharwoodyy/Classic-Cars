@@ -19,19 +19,26 @@ p {
   margin: 0;
 }
 
+.btn a {
+  color: black;
+  font-family: 'Arvo', ;
+}
+
 .links {
   display: flex;
   justify-content: center;
-
+     text-decoration: none;
 
  a {
     margin: 20px;
     padding: 10px;
 
+
   }
   button {
     margin:10px;
     border-radius: 5px;
+
 
   }
 }
