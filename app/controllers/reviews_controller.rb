@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
 def create
 	check_user_access
 	@car = Car.find(params[:car_id])
@@ -10,7 +11,14 @@ def create
 		render "cars/show"
 	end
 end
+  
+def destroy
+  @review.destroy
+  redirect_to car_path(@car)
+end
 
+private
+  
 	def review_params
 		params.require(:review).permit(:rating, :content)
 	end

@@ -1,4 +1,4 @@
-<h1> Add Your Listing </h1>
+<h1> Edit Your Listing </h1>
     <div class="col-6 offset-3">
       <%= simple_form_for @car do |f| %>
         <%= f.error_notification %>
@@ -8,13 +8,10 @@
         <%= f.input :price %>
         <%= f.input :address %>
         <%= f.input :description, as: :text %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Create Listing" %>
+        <%= f.submit "Edit Listing" %>
       <% end %>
     </div>
 
     <div class = "links">
-    <%= link_to "Back to listings", cars_path %>
+    <%= link_to "Back to car", car_path(@car) %>
     </div>
-
-
