@@ -37,10 +37,12 @@ class CarsController < ApplicationController
 	end
 
 	def edit
+    @car = Car.find(params[:id])
 	end
 
 	def update
-		@car.update(car_params)
+		@car = Car.find(params[:id])
+    @car.update(car_params)
 		redirect_to car_path(@car)
 	end
 
@@ -52,7 +54,7 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-		params.require(:car).permit(:manufacturer, :model, :year, :price, :rating, :description, :photo)
+		params.require(:car).permit(:manufacturer, :model, :year, :address, :price, :rating, :description, :photo)
 	end
 
 	def find_car
