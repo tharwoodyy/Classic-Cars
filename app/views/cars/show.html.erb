@@ -1,9 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8">
-      <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo.key, height: 400, width: 700, crop: :fill %>'); height: 400px; width: 700px">
-        <%#= cl_image_tag @car.photo.key, class:'large-image' %>
+    <div class="col-6">
+      <%= image_tag @car.photos.first.service_url, class: 'first-car-photo' %>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <% @car.photos.drop(1).each do |photo| %>
+          <div class="col-6">
+            <%= image_tag photo.service_url, class: 'cars-photo' %>
+          </div>
+        <% end %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <!-- <div class="image-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('@car.photos.each do |photo|
+      cl_image_path photo.key, height: 400, width: 700, crop: :fill %>'); height: 400px; width: 700px">
+        <%#= cl_image_tag @car.photo.key, class:'large-image' %>
+      </div> -->
     </div>
     <div class="col-sm-4">
       <div class="info-container">

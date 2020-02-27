@@ -7,7 +7,7 @@
         <%= f.input :year %>
         <%= f.input :price %>
         <%= f.input :description, as: :text %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create Listing" %>
       <% end %>
     </div>
