@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
 def create
 	check_user_access
-	@car = Car.find(params[:car_id])
+	@car = Booking.find(params[:booking_id]).car
 	@review = Review.new(review_params)
 	@review.car = @car
 	if @review.save
@@ -13,8 +13,9 @@ def create
 end
   
 def destroy
+	@review = Review.find(params[:id])
   @review.destroy
-  redirect_to car_path(@car)
+  redirect_to car_path(@review.car)
 end
 
 private
