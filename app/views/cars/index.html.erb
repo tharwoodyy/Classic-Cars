@@ -1,31 +1,51 @@
 <h1> Browse All Cars </h1>
 
-<div class="container card-container">
-  <div class="row">
-    <% @cars.each do |car| %>
-      <% next unless car.photo.attached? %>
-      <div class="col-12 col-md-6 col-lg-4">
-        <%= link_to car_path(car), class: 'card-link' do %>
-          <div class="card">
-            <%= cl_image_tag car.photo.key, class: "card-img" %>
-              <div class="card-description">
-                <div class="card-title">
-                  <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>
-                  <p class="right-align"> <%= '*' * (car.rating || 0) %></p>
+<div class="container">
+
+ <div class="search-container">
+  <%= form_tag cars_path, class: "search-form", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a Car"
+    %>
+    <button type="submit" class="btn">
+      <i class="fa fa-search"></i>
+    </button>
+  <% end %>
+  </div>
+
+  <div class="card-con  tainer">
+    <div class="row">
+      <% @cars.each do |car| %>
+        <% next unless car.photo.attached? %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <%= link_to car_path(car), class: 'card-link' do %>
+            <div class="card">
+              <%= cl_image_tag car.photo.key, class: "card-img" %>
+                <div class="card-description">
+                  <div class="card-title">
+                    <p class="left-align"><%= car.manufacturer %>, <%= car.model %></p>
+                    <p class="right-align"> <%= '*' * (car.rating || 0) %></p>
+                  </div>
+                  <div class="card-information">
+                    <%= car.description %>
+                  </div>
                 </div>
-                <div class="card-information">
-                  <%= car.description %>
-                </div>
-              </div>
-            <% end %>
+              <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class="links">
-<button type="button" class="btn btn-link"> <%= link_to "Add a new Listing", new_car_path(@car) %></button> </div>
+  <% if params[:query].present? %>
+    <button type="button" class="btn btn-link"> <%= link_to "Back to Cars", cars_path %></button>
+  <% end %>
+  <button type="button" class="btn btn-link"> <%= link_to "Add a new Listing", new_car_path(@car) %></button>
+</div>
 
 
 
