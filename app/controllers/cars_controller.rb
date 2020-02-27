@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
+	before_action :check_owner_access, only: [:edit, :update, :destroy]
 
 	def index
     if params[:query].present?
@@ -36,10 +37,12 @@ class CarsController < ApplicationController
 	end
 
 	def edit
+    @car = Car.find(params[:id])
 	end
 
 	def update
-		@car.update(car_params)
+		@car = Car.find(params[:id])
+    @car.update(car_params)
 		redirect_to car_path(@car)
 	end
 

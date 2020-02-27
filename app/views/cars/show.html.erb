@@ -11,6 +11,8 @@
             <ul>
               <li class="lessli"><%= @car.year %></li>
               <li class="lessli"><%= @car.price %></li>
+              <li class="lessli"><%= @car.address %></li>
+              <li class="lessli"><%= @car.description %></li>
               <li><%= '☆' * 5 %></li>
               <button type="button" class="btn btn-link">
             <%= link_to 'Book car', new_car_booking_path(@car) %>
@@ -28,6 +30,13 @@
 <button type="button" class="btn btn-link">
 <%= link_to 'Back', cars_path %>
 </button>
+<button type="button" class="btn btn-link">
+<%= link_to 'Book car', new_car_booking_path(@car) %>
+</button>
+<button type="button" class="btn btn-link">
+<%= link_to 'Edit car', edit_car_path(@car) %>
+</button>
+</div>
 
 </div>
 
@@ -61,8 +70,10 @@
         </ul>
       <% end %>
 
-      <%= render "reviews/new", car: @car, review: @review %>
-
   </div>
 </div>
+
+  <% if @car.bookings.where(user: current_user).any? %>
+    <%= render "reviews/new", car: @car, review: @review, booking: @car.bookings.where(user: current_user).last %>
+  <% end %>
 
