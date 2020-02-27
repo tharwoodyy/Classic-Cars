@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 def create
+	check_user_access
 	@car = Car.find(params[:car_id])
 	@review = Review.new(review_params)
 	@review.car = @car

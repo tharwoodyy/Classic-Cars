@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
+	before_action :check_owner_access, only: [:edit, :update, :destroy]
 
 	def index
     if params[:query].present?
@@ -10,16 +11,13 @@ class CarsController < ApplicationController
 	end
 
 	def show
-
     @markers = [
       {
         lat: @car.latitude,
         lng: @car.longitude
       }
     ]
-
 		@review = Review.new
-
 	end
 
 	def new
