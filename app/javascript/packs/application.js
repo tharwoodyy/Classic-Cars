@@ -23,6 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 import "bootstrap";
+import Typewriter from 'typewriter-effect/dist/core';
 // app/javascript/packs/application.js
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
@@ -30,4 +31,17 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  const target = document.getElementById('banner-description')
+
+  if (target) {
+    const typewriter = new Typewriter(target, {
+      loop: true,
+      delay: 50
+    })
+
+    typewriter.typeString('Find your perfect car for a journey through time...')
+      .pauseFor(2500)
+      .deleteAll()
+      .start()
+  }
 })

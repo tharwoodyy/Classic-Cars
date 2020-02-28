@@ -12,7 +12,8 @@
     "mapbox-gl": "^1.8.1",
     "places.js": "^1.18.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typewriter-effect": "^2.12.2"
   },
   "version": "0.1.0",
   "devDependencies": {
