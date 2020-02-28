@@ -5,7 +5,9 @@
     </div>
    <!-- <img class="carousel-image d-block w-100" src="https://images.unsplash.com/photo-1517342463979-7f018ddc30f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" alt="Third slide"> -->
 
-<h1 class="new"> Make a Booking. </h1>
+<h1 class="new"> Make a Booking</h1>
+<h2 class="new2">The drive of your life</h2>
+<div class="container d-flex justify-content-between">
   <div class="container-new">
     <%= simple_form_for [@car, @booking] do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
@@ -14,6 +16,19 @@
     <% end %>
     <br>
     <br>
+</div>
+
+
+<div class="booking-info">
+  <h4>Terms & Conditions</h4>
+<ul>
+ <li>Same location for pick up and drop off</li>
+ <li>£100 deposit</li>
+ <li>Please take care of the car</li>
+ <li>Contact the owner for any queries</li>
+</ul>
+
+  </div>
 </div>
 
  <div class = "d-flex justify-content-center py-2">
