@@ -54,28 +54,28 @@ url_h_3 = "https://images.unsplash.com/photo-1580842951718-9c0d371ae584?ixlib=rb
 url_h_4 = "https://images.unsplash.com/photo-1562798719-3273d317fc83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1147&q=80"
 url_h_5 = "https://images.unsplash.com/photo-1559236794-2ebe63ad6019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
 
-jag = Car.create!(model: 'E-Type', manufacturer: 'Jaguar', year: 1968, price: '£500 per day', description: 'Beautiful classic car, Rare mint condition, Engine running smoothly, leather interirors', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
+jag = Car.create!(model: 'E-Type', manufacturer: 'Jaguar', year: 1968, price: '£500 per day', description: 'Beautiful classic car, Rare mint condition, Engine running smoothly, leather interirors', rating: 5, user: user, address: 'Oxford, UK')
 jag.photos.attach(io: open(url_jaguar_1), filename: 'jag_1')
 jag.photos.attach(io: open(url_jaguar_2), filename: 'jag_2')
 jag.photos.attach(io: open(url_jaguar_3), filename: 'jag_3')
 jag.photos.attach(io: open(url_jaguar_4), filename: 'jag_4')
 jag.photos.attach(io: open(url_jaguar_5), filename: 'jag_5')
 
-bet = Car.create!(model: 'Beetle', manufacturer: 'VW', year: 1944, price: '£350 per day', description: 'Classic Bug, Perfect for a weekend getaway, Great working condition', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
+bet = Car.create!(model: 'Beetle', manufacturer: 'VW', year: 1944, price: '£350 per day', description: 'Classic Bug, Perfect for a weekend getaway, Great working condition', rating: 5, user: user, address: 'Wolfsburg, Germany')
 bet.photos.attach(io: open(url_beetle_1), filename: 'bet_1')
 bet.photos.attach(io: open(url_beetle_2), filename: 'bet_2')
 bet.photos.attach(io: open(url_beetle_3), filename: 'bet_3')
 bet.photos.attach(io: open(url_beetle_4), filename: 'bet_4')
 bet.photos.attach(io: open(url_beetle_5), filename: 'bet_5')
 
-ford = Car.create!(model: 'Pick-up', manufacturer: 'Ford', year: 1944, price: '£150 per day', description: 'Classic Pick-up, Surfboard included, Minor engine troubles', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
+ford = Car.create!(model: 'Pick-up', manufacturer: 'Ford', year: 1944, price: '£150 per day', description: 'Classic Pick-up, Surfboard included, Minor engine troubles', rating: 5, user: user, address: 'Oahu, Hawaii')
 ford.photos.attach(io: open(url_ford_1), filename: 'ford_1')
 ford.photos.attach(io: open(url_ford_2), filename: 'ford_2')
 ford.photos.attach(io: open(url_ford_3), filename: 'ford_3')
 ford.photos.attach(io: open(url_ford_4), filename: 'ford_4')
 ford.photos.attach(io: open(url_ford_5), filename: 'ford_5')
 
-defender = Car.create!(model: 'Defender', manufacturer: 'Land Rover', year: 1967, price: '£200 per day', description: 'Beautiful Defender, Perfect for a trip to the country side or the beach', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
+defender = Car.create!(model: 'Defender', manufacturer: 'Land Rover', year: 1967, price: '£200 per day', description: 'Beautiful Defender, Perfect for a trip to the country side or the beach', rating: 5, user: user, address: 'Edinburgh, UK')
 defender.photos.attach(io: open(url_defnder_1), filename: 'defender_1')
 defender.photos.attach(io: open(url_defnder_2), filename: 'defender_2')
 defender.photos.attach(io: open(url_defnder_3), filename: 'defender_3')
@@ -90,7 +90,7 @@ ss.photos.attach(io: open(url_SS_4), filename: 'ss_4')
 ss.photos.attach(io: open(url_SS_5), filename: 'ss_5')
 
 
-t = Car.create!(model: 'T-bird', manufacturer: 'Coupe', year: 1989, price: '£600 per day', description: 'Beautiful convertible, Perfect for a summer getaway, leather interiror, mint condition, cheery red', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
+t = Car.create!(model: 'T-bird', manufacturer: 'Coupe', year: 1989, price: '£600 per day', description: 'Beautiful convertible, Perfect for a summer getaway, leather interiror, mint condition, cheery red', rating: 5, user: user, address: 'Havana, Cuba')
 t.photos.attach(io: open(url_T_1), filename: 't_1')
 t.photos.attach(io: open(url_T_2), filename: 't_2')
 t.photos.attach(io: open(url_T_3), filename: 't_3')
