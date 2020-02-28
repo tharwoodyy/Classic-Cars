@@ -1,5 +1,6 @@
+<div class="container-form body-white">
 <h1> Add Your Listing </h1>
-    <div class="col-6 offset-3">
+    <div class="col-6 offset-3 border border-car-form">
       <%= simple_form_for @car do |f| %>
         <%= f.error_notification %>
         <%= f.input :model %>
@@ -8,8 +9,10 @@
         <%= f.input :price %>
         <%= f.input :address %>
         <%= f.input :description, as: :text %>
+        <span class="centre-btn">
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create Listing" %>
+        </span>
       <% end %>
     </div>
 
@@ -19,5 +22,5 @@
     <%= link_to "Back to listings", cars_path %>
     </div>
   </div>
-
+</div>
 
