@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
 	def new
 		@booking = Booking.new
 		@car = Car.find(params[:car_id])
-        flash[:notice] = "You don't have access"
 
 		redirect_to car_path(@car) if @car.user == current_user
 	end
