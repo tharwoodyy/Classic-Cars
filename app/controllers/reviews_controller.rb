@@ -11,7 +11,7 @@ def create
 		render "cars/show"
 	end
 end
-  
+
 def destroy
 	@review = Review.find(params[:id])
   @review.destroy
@@ -19,7 +19,7 @@ def destroy
 end
 
 private
-  
+
 	def review_params
 		params.require(:review).permit(:rating, :content)
 	end
