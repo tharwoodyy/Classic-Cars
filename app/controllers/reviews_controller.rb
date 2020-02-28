@@ -13,8 +13,9 @@ def create
 end
 
 def destroy
+	@review = Review.find(params[:id])
   @review.destroy
-  redirect_to car_path(@car)
+  redirect_to car_path(@review.car)
 end
 
 private

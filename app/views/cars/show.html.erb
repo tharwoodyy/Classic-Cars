@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
+      <div class="overlay-fade">
       <%= image_tag @car.photos.first.service_url, class: 'first-car-photo' %>
+        <div class="text" style="">
+          <%= link_to 'Book Car', new_car_booking_path(@car) %>
+        </div>
+      </div>
     </div>
     <div class="col-6">
       <div class="row">
@@ -13,29 +18,24 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-8">
-        <%#= cl_image_tag @car.photo.key, class:'large-image' %>
-      </div> -->
-    </div>
-    <div class="col-sm-4">
-      <div class="info-container">
-          <h1 class ="less"><%= @car.manufacturer %> <%= @car.model %></h1>
-            <ul>
-              <li class="lessli"><%= @car.year %></li>
-              <li class="lessli"><%= @car.price %></li>
-              <li class="lessli"><%= @car.address %></li>
+
+
+  <div class="info-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="car-title"><%= @car.manufacturer %> <%= @car.model %></h1>
+          <ul>
               <li class="lessli"><%= @car.description %></li>
+              <li class="lessli"><%= @car.price %></li>
+              <li class="lessli">Year: <%= @car.year %></li>
+              <li class="lessli">Available to rent from:  <%= @car.address %></li>
               <li><%= '☆' * 5 %></li>
-            </ul>
-          </div>
+          </ul>
       </div>
+    </div>
   </div>
 </div>
-<!--
-<div class="car-container" >
 
-</div> -->
 <div class="links">
 <button type="button" class="btn btn-link">
 <%= link_to 'Back', cars_path %>
@@ -64,20 +64,22 @@
         <p>Be the first to leave a review</p>
       <% else %>
     </div>
-        <ul class="list-group">
-          <% @car.reviews.each do |review| %>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
-                <% counter = 0 %>
-                <% 5.times do %>
-                  <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                  <% counter += 1 %>
-                <% end %>
-              </span>
-              <%= review.content %>
-            </li>
-          <% end %>
-        </ul>
+
+      <ul class="list-group">
+        <% @car.reviews.each do |review| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge badge-primary badge-pill">
+              <% counter = 0 %>
+              <% 5.times do %>
+                <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                <% counter += 1 %>
+              <% end %>
+            </span>
+            <%= review.content %>
+          </li>
+        <% end %>
+      </ul>
+
       <% end %>
 
   </div>
