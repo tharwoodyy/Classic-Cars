@@ -14,9 +14,10 @@ h1 {
   background-position: 0 150%;
   .carousel-image {
     background-size: cover;
-    background-position: center;
     height: calc(100vh - 100px);
     object-fit: cover;
+	background-position: center;
+	background-attachment: fixed;
   }
 }
 
