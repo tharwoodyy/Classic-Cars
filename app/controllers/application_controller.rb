@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "You don't have access"
     end
 	end
+
+	def owner?(item)
+		item.user.id == current_user.id ? true : false
+	end
 end
