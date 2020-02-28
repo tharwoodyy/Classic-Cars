@@ -48,6 +48,12 @@ url_T_3 = "https://images.unsplash.com/photo-1469388062863-8702b8cbe4f3?ixlib=rb
 url_T_4 = "https://images.unsplash.com/photo-1434285692992-0a83b5617f7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
 url_T_5 = "https://images.unsplash.com/photo-1581403339113-10ed4ee7469d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
 
+url_h_1 = "https://images.unsplash.com/photo-1577639389657-e33f4c461e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80"
+url_h_2 = "https://images.unsplash.com/uploads/14136148007774dc82563/ce92d553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1543&q=80"
+url_h_3 = "https://images.unsplash.com/photo-1580842951718-9c0d371ae584?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80"
+url_h_4 = "https://images.unsplash.com/photo-1562798719-3273d317fc83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1147&q=80"
+url_h_5 = "https://images.unsplash.com/photo-1559236794-2ebe63ad6019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+
 jag = Car.create!(model: 'E-Type', manufacturer: 'Jaguar', year: 1968, price: '£500 per day', description: 'Beautiful classic car, Rare mint condition, Engine running smoothly, leather interirors', rating: 5, user: user, address: '16 Villa Gaudelet, Paris')
 jag.photos.attach(io: open(url_jaguar_1), filename: 'jag_1')
 jag.photos.attach(io: open(url_jaguar_2), filename: 'jag_2')
@@ -90,3 +96,11 @@ t.photos.attach(io: open(url_T_2), filename: 't_2')
 t.photos.attach(io: open(url_T_3), filename: 't_3')
 t.photos.attach(io: open(url_T_4), filename: 't_4')
 t.photos.attach(io: open(url_T_5), filename: 't_5')
+
+h = Car.create!(model: 'Stallion', manufacturer: 'Schrute Farms', year: 2006, price: '£200 per day', description: 'Perfect for a summer getaway, bag of beets included, leather interiror, oak wood details', rating: 3, user: user, address: 'Scranton, Pensylvania')
+h.photos.attach(io: open(url_h_1), filename: 'h_1')
+h.photos.attach(io: open(url_h_2), filename: 'h_2')
+h.photos.attach(io: open(url_h_3), filename: 'h_3')
+h.photos.attach(io: open(url_h_4), filename: 'h_4')
+h.photos.attach(io: open(url_h_5), filename: 'h_5')
+
