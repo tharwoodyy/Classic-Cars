@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
 
 def create
-	check_user_access
 	@car = Booking.find(params[:booking_id]).car
 	@review = Review.new(review_params)
 	@review.car = @car
