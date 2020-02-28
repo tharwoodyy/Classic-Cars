@@ -4,12 +4,11 @@
   <ul class="list-group">
     <% current_user.bookings.each do |booking| %>
       <li class="list-group-item"><%= booking.car.manufacturer %> <%= booking.car.model %> booked from <%= booking.start_date %> to <%= booking.end_date %></li>
-
-      <div class ="links">
+        <div class ="links">
       <div class="btn btn-link">
-      <%= link_to 'Cancel booking', booking_path(booking), method: :delete %>
-    <% end %>
-  </div>
-   </div>
-  </ul>
+    <%= link_to 'Cancel booking', booking_path(booking), method: :delete %>
+  <% end %>
+</div>
+</div>
+</ul>
 </div>
